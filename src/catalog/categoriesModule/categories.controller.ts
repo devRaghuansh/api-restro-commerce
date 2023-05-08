@@ -1,10 +1,20 @@
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Post, Put, Delete } from "@nestjs/common";
 
 @Controller('catalog')
 export class CategoriesController {
 
-    @Get('category') 
-    getCategories() {
-        return 'Categories controller'
+    @Post('category') 
+    addCategory() {
+        return 'Categories add'
+    }
+
+    @Put('category')
+    updateCategory() {
+        return 'Categories update'
+    }
+
+    @Delete('category')
+    deleteCategory() {
+        return 'Delete category'
     }
 }
