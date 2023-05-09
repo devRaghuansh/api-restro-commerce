@@ -1,12 +1,18 @@
 import { Module } from "@nestjs/common";
 import { AddressController } from "./addressModule/address.controller";
-import { ProfileContorller } from "./profileModule/profile.controller";
-
+import { AccountContorller } from "./accountModule/account.controller";
+import { OrderController } from "./orderModule/order.controller";
+import { CouponController } from "./couponModule/coupon.controller";
+import { LogoutController } from "./logoutModule/logout.controller";
 @Module({
     imports: [],
     controllers: [
         AddressController,
-        ProfileContorller
+        AccountContorller,
+        OrderController,
+        CouponController,
+        LogoutController
+
     ],
     providers: []
 })

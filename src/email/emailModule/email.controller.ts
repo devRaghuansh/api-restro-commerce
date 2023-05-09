@@ -4,7 +4,7 @@ import { Controller, Get } from "@nestjs/common";
 @Controller('email')
 export class EmailController {
     @Get('email')
-    getEmail(): String {
+    getEmailTemplate(): String {
         return 'Email String'
     }
 }

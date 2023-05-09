@@ -9,6 +9,7 @@ import { DeliveryModule } from './delivery/delivery.module';
 import { EmailModule } from './email/email.module';
 import { MarketingModule } from './marketing /marketing.module';
 import SalesModule from './sales/sales.module';
+import { SiteModule } from './site/site.module';
 
 @Module({
   imports: [
@@ -19,7 +20,8 @@ import SalesModule from './sales/sales.module';
     DeliveryModule,
     EmailModule,
     MarketingModule,
-    SalesModule
+    SalesModule,
+    SiteModule
   ],
   controllers: [AppController],
   providers: [AppService],
