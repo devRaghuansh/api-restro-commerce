@@ -10,7 +10,7 @@ import { EmailModule } from './email/email.module';
 import { MarketingModule } from './marketing /marketing.module';
 import SalesModule from './sales/sales.module';
 import { SiteModule } from './site/site.module';
-
+import { TypeOrmModule } from '@nestjs/typeorm';
 @Module({
   imports: [
     AuthenticationModule,
@@ -21,7 +21,17 @@ import { SiteModule } from './site/site.module';
     EmailModule,
     MarketingModule,
     SalesModule,
-    SiteModule
+    SiteModule,
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'amitsharma',
+      password: 'nmnmnmn',
+      database: 'restro', 
+      entities: [], 
+      synchronize: true,
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],

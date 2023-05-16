@@ -4,8 +4,14 @@ import { AccountContorller } from "./accountModule/account.controller";
 import { OrderController } from "./orderModule/order.controller";
 import { CouponController } from "./couponModule/coupon.controller";
 import { LogoutController } from "./logoutModule/logout.controller";
+import { accountProviders } from "./accountModule/account.repositories";
+import { AccountEntity } from "./accountModule/account.entity";
+import { TypeOrmModule } from "@nestjs/typeorm";
+
 @Module({
-    imports: [],
+    imports: [
+        TypeOrmModule.forFeature([AccountEntity])
+    ],
     controllers: [
         AddressController,
         AccountContorller,
@@ -14,7 +20,9 @@ import { LogoutController } from "./logoutModule/logout.controller";
         LogoutController
 
     ],
-    providers: []
+    providers: [
+        ...accountProviders
+    ]
 })
 export class CustomerModule {
 
