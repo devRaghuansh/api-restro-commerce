@@ -21,7 +21,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 
     ],
     providers: [
-        ...accountProviders
+       // ...accountProviders
     ]
 })
 export class CustomerModule {

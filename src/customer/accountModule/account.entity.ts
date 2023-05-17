@@ -1,6 +1,6 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
+@Entity('Account')
 export class AccountEntity extends BaseEntity {
     @PrimaryGeneratedColumn({
         comment: 'This is unique identifier for account'
