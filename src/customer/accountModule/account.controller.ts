@@ -13,7 +13,6 @@ export class AccountContorller {
     }
     @Post('account')
     createProfile(@Body() user) {
-        console.log(user)
         return this.accountService.createAccount(user)
     }
     @Put('account')

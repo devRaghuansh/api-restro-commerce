@@ -7,6 +7,8 @@ import { LogoutController } from "./logoutModule/logout.controller";
 import { accountProviders } from "./accountModule/account.repositories";
 import { AccountEntity } from "./accountModule/account.entity";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { AccountService } from "./accountModule/account.service";
+import { CartController } from "./cartModule/cart.controller";
 
 @Module({
     imports: [
@@ -17,10 +19,11 @@ import { TypeOrmModule } from "@nestjs/typeorm";
         AccountContorller,
         OrderController,
         CouponController,
-        LogoutController
-
+        LogoutController,
+        CartController
     ],
     providers: [
+AccountService
        // ...accountProviders
     ]
 })
