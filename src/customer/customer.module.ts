@@ -9,10 +9,11 @@ import { AccountEntity } from "./accountModule/account.entity";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { AccountService } from "./accountModule/account.service";
 import { CartController } from "./cartModule/cart.controller";
+import { CustomerCartEntity } from "./cartModule/cart.entity";
 
 @Module({
     imports: [
-        TypeOrmModule.forFeature([AccountEntity])
+        TypeOrmModule.forFeature([AccountEntity, CustomerCartEntity])
     ],
     controllers: [
         AddressController,
