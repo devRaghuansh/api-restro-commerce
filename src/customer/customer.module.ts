@@ -27,6 +27,9 @@ import { AddressEntity } from "./addressModule/address.entity";
     providers: [
 AccountService
        // ...accountProviders
+    ],
+    exports:[
+        AccountService
     ]
 })
 export class CustomerModule {

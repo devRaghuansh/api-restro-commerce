@@ -16,4 +16,14 @@ export class AccountService {
          return newAccount;
       }
 
+      async findUserByEmail(email: string) {
+        return await AccountEntity.findOne({
+            where: {
+                email: email,
+            },
+        });
+    }
+
+
+
 }

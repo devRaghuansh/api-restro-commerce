@@ -9,15 +9,17 @@ import { DeliveryAuthenticationController } from "./deliveryAuthenticationModule
 import { SalesAuthenticationController } from "./salesAuthenticationModule/salesAuthentication.controller";
 import { UserAuthenticationController } from "./userAuthenticationModule/userAuthentication.controller";
 import { UserAuthenticationService } from "./userAuthenticationModule/userAuthentication.service";
+import { CustomerModule } from "../customer/customer.module";
 
 
 @Module({
     imports: [
+        CustomerModule,
         JwtModule.registerAsync({
         useFactory: async () => ({
             secret: 'hello',
             }),
-        })
+        }),
     ],
     controllers: [
         AdminAuthenticationController,
@@ -26,7 +28,7 @@ import { UserAuthenticationService } from "./userAuthenticationModule/userAuthen
         UserAuthenticationController
     ],
     providers: [
-        UserAuthenticationService
+        UserAuthenticationService,
     ]
 })
 export class AuthenticationModule {

@@ -11,11 +11,13 @@ import { MarketingModule } from './marketing /marketing.module';
 import SalesModule from './sales/sales.module';
 import { SiteModule } from './site/site.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
 @Module({
   imports: [
+    CustomerModule,
     AuthenticationModule,
     CatalogModule,
-    CustomerModule,
+    
     CustomerSupportModule,
     DeliveryModule,
     EmailModule,

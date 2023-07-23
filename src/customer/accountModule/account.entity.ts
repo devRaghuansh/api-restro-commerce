@@ -1,5 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, BeforeInsert } from "typeorm";
+import * as bcrypt from 'bcryptjs';
 @Entity('Account')
 export class AccountEntity extends BaseEntity {
     @PrimaryGeneratedColumn({
@@ -13,7 +13,8 @@ export class AccountEntity extends BaseEntity {
     userName: string;
 
     @Column({
-        type: "varchar"
+        type: "varchar",
+        unique:true 
     })
     email: string;
 
@@ -30,11 +31,6 @@ export class AccountEntity extends BaseEntity {
     @Column({
         type: "varchar"
     })
-    confirmPassword: string;
-
-    @Column({
-        type: "varchar"
-    })
     avatar: string;
 
     @Column({
@@ -46,4 +42,13 @@ export class AccountEntity extends BaseEntity {
         type: "varchar"
     })
     status: string;
+
+    @BeforeInsert()
+    async hashPassword() {
+        this.password = await bcrypt.hash(this.password, 8);
+    }
+    
+    async validatePassword(password: string): Promise<boolean> {
+        return bcrypt.compare(password, this.password);
+    }
 }
