@@ -3,17 +3,20 @@ import { IsNumber, IsString } from "class-validator";
 
 export class AccountDTO {
     @IsString()
-    firstName: String;
+    userName: String;
 
     @IsString()
-    lastName: String;
+    email: String;
+
+    @IsNumber()
+    mobileNumber: Number;
 
     @IsString()
     password: String;
 
     @IsString()
-    emailId: String;
+    confirmPassword: String;
 
-    @IsNumber()
-    phoneNumber: Number;
+    @IsString()
+    avatar: string;
 }

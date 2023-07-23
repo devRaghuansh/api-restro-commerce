@@ -1,3 +1,5 @@
 node_modules
 dist
 package-lock.json
+doubt.txt
+postgresCommand.txt

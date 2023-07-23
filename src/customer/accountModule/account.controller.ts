@@ -1,5 +1,6 @@
 import { Body, Controller, Delete, Get, Post, Put } from "@nestjs/common";
 import { AccountService } from "./account.service";
+import { AccountDTO } from "./account.dto";
 
 @Controller('customer')
 export class AccountContorller {
@@ -12,7 +13,7 @@ export class AccountContorller {
         return 'hello'
     }
     @Post('account')
-    createProfile(@Body() user) {
+    createProfile(@Body() user : AccountDTO) {
         return this.accountService.createAccount(user)
     }
     @Put('account')

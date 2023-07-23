@@ -10,5 +10,40 @@ export class AccountEntity extends BaseEntity {
     @Column({
         type: "varchar"
     })
-    title: string;
+    userName: string;
+
+    @Column({
+        type: "varchar"
+    })
+    email: string;
+
+    @Column({
+        type: "varchar"
+    })
+    mobileNumber: string;
+
+    @Column({
+        type: "varchar"
+    })
+    password: string;
+
+    @Column({
+        type: "varchar"
+    })
+    confirmPassword: string;
+
+    @Column({
+        type: "varchar"
+    })
+    avatar: string;
+
+    @Column({
+        type: "varchar"
+    })
+    mailStatus: string;
+
+    @Column({
+        type: "varchar"
+    })
+    status: string;
 }
