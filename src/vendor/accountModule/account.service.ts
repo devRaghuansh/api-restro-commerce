@@ -10,11 +10,25 @@ export class VendorAccountService {
         private vendorAccountEntity : Repository<VendorAccountEntity>
     ) {}
 
-    async createVendorAccuntProfile(newVendorDetail) {
+    async createVendorAccountProfile(newVendorDetail) {
         const createVendorAccount = this.vendorAccountEntity.create(newVendorDetail)
         const saveVendorAccount = await this.vendorAccountEntity.save(createVendorAccount)
         return saveVendorAccount
         //return 'creating vendor account profile'
+    }
+
+    async getVendorAccountProfile(id) {
+        const getVendorAccountDetail = await this.vendorAccountEntity.findOne({
+            where: {
+                id
+            }
+        })
+        return getVendorAccountDetail
+    }
+
+    async deleteVendorAccountProfile() {
+        const deleteVendorAccountDetail = await this.vendorAccountEntity.delete(1)
+        return deleteVendorAccountDetail
     }
 
 }

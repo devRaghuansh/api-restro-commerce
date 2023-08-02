@@ -8,22 +8,24 @@ export class AccountController {
     }
     @Get('account')
     getVendorProfile() {
-        return 'Welcome vendor'
+        return this.vendorAccountService.getVendorAccountProfile(1)
     }
 
     @Post('account')
     createVendorProfile(@Body() newVendorData) {
         console.log("New vendor Data", newVendorData)
-        return this.vendorAccountService.createVendorAccuntProfile(newVendorData)
+        return this.vendorAccountService.createVendorAccountProfile(newVendorData)
     }
 
     @Put('account')
     editVendorProfile(){
+
         return 'edit vendor profile'
     }
 
     @Delete('account')
     deleteVendorProfile() {
+        return this.vendorAccountService.deleteVendorAccountProfile()
         return 'delete vendor profile'
     }
 }

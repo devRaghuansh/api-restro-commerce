@@ -1,5 +1,4 @@
 import { Module } from "@nestjs/common";
-import { AddressController } from "./addressModule/address.controller";
 import { AccountContorller } from "./accountModule/account.controller";
 import { OrderController } from "./orderModule/order.controller";
 import { CouponController } from "./couponModule/coupon.controller";
@@ -10,14 +9,14 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { AccountService } from "./accountModule/account.service";
 import { CartController } from "./cartModule/cart.controller";
 import { CustomerCartEntity } from "./cartModule/cart.entity";
-import { AddressEntity } from "./addressModule/address.entity";
+import { CustomerAddressModule } from "./addressModule/address.module";
 
 @Module({
     imports: [
-        TypeOrmModule.forFeature([AccountEntity, CustomerCartEntity, AddressEntity])
+        TypeOrmModule.forFeature([AccountEntity, CustomerCartEntity]),
+        CustomerAddressModule
     ],
     controllers: [
-        AddressController,
         AccountContorller,
         OrderController,
         CouponController,

@@ -1,6 +1,6 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('Customer_Cart')
+@Entity('customer_cart')
 export class CustomerCartEntity extends BaseEntity {
     @PrimaryGeneratedColumn({
         comment: 'This is unique identifier for account'
