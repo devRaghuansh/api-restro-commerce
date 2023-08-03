@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('customer_cart')
 export class CustomerCartEntity extends BaseEntity {
@@ -37,9 +37,7 @@ export class CustomerCartEntity extends BaseEntity {
     })
     quantity: number;
     
-    @Column({
-        type: "varchar"
-    })
-    date_added: string;
+    @CreateDateColumn()
+    createdAt: Date;
 
 }

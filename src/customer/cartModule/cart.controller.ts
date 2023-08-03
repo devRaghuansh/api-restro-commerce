@@ -1,16 +1,21 @@
-import { Controller, Delete, Get, Post, Put } from "@nestjs/common";
-
+import { Body, Controller, Delete, Get, Post, Put } from "@nestjs/common";
+import { CustomerCartService } from "./cart.service";
 
 @Controller("customer")
 export class CartController {
+    constructor(
+        private customerCartService : CustomerCartService
+    ){
+
+    }
     @Get('cart')
     getCartDetail() {
         return 'cart'
     }
 
     @Post('cart')
-    addCartDetail() {
-        return 'Add cart Detail '
+    addCartDetail(@Body() cartDetail) {
+        return this.customerCartService.createCustomerCart(cartDetail)
     }
 
     @Put('cart')
