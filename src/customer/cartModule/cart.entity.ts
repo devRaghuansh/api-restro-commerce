@@ -1,5 +1,5 @@
 import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
-
+ 
 @Entity('customer_cart')
 export class CustomerCartEntity extends BaseEntity {
     @PrimaryGeneratedColumn({
@@ -39,5 +39,5 @@ export class CustomerCartEntity extends BaseEntity {
     
     @CreateDateColumn()
     createdAt: Date;
-
+    
 }

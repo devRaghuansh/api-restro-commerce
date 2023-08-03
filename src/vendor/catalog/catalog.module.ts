@@ -1,19 +1,19 @@
 import { Module } from "@nestjs/common";
-import { CategoriesController } from "./categoriesModule/categories.controller";
 import { ProductController } from "./productModule/product.controller";
 import { ProductReviewController } from "./productReviewModule/productReview.controller";
 import { CatalogProductEntity } from "./productModule/product.entity";
-import { CatalogCategoryEntity } from "./categoriesModule/category.entity";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { CatalogProductReviewEntity } from "./productReviewModule/productreview.entity";
+import { CatalogCategoryModule } from "./categoriesModule/category.module";
 
 
 @Module({
-    imports: [ TypeOrmModule.forFeature([CatalogProductEntity,CatalogCategoryEntity,
+    imports: [ TypeOrmModule.forFeature([CatalogProductEntity,
         CatalogProductReviewEntity
-    ])],
+    ]),
+    CatalogCategoryModule
+],
     controllers: [
-        CategoriesController,
         ProductController,
         ProductReviewController
     ],

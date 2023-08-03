@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity('Customer_Order')
 export class CustomerOrderEntity {
@@ -79,7 +79,7 @@ export class CustomerOrderEntity {
    @Column({
     type: "varchar"
    })
-   payment_compamny: String
+   payment_company: String
 
    @Column({
     type: "varchar"
@@ -104,7 +104,7 @@ export class CustomerOrderEntity {
      @Column({
       type: "varchar"
      })
-     payment_country
+     payment_country: String
 
      @Column({
       type: "numeric"
@@ -209,12 +209,12 @@ export class CustomerOrderEntity {
      @Column({
       type: "numeric"
      })
-     currency_id:  String
+     currency_id:  Number
 
      @Column({
       type: "numeric"
      })
-     currency_code: String
+     currency_code: Number
 
      @Column({
       type: "varchar"
@@ -231,14 +231,10 @@ export class CustomerOrderEntity {
      })
      user_agent: String
 
-     @Column({
-      type: "varchar"
-     })
-     date_added : String
+     @CreateDateColumn()
+     createdAt : Date
 
-     @Column({
-      type: "varchar"
-     })
-     date_modified:  String
+     @UpdateDateColumn()
+     updatedAt:  Date
      
 }

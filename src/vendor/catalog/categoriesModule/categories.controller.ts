@@ -1,11 +1,13 @@
-import { Controller, Post, Put, Delete } from "@nestjs/common";
-
+import { Controller, Post, Put, Delete, Body } from "@nestjs/common";
+import { CatalogCategoryService } from "./category.service";
 @Controller('catalog')
-export class CategoriesController {
-
+export class CatalogCategoryController {
+    constructor(
+        private catalogCategoryService: CatalogCategoryService
+    ){}
     @Post('category') 
-    addCategory() {
-        return 'Categories add'
+    addCategory(@Body() newCategoryData) {
+        return this.catalogCategoryService.createCatalogCategory(newCategoryData)
     }
 
     @Put('category')

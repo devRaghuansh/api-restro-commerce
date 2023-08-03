@@ -47,10 +47,10 @@ export class CatalogCategoryEntity {
     @Column({
         type: "numeric"
     })
-    status: String;
+    status: number;
     
     @Column({
-        type: "numeric"
+        type: "varchar"
     })
     description: String;
 }
