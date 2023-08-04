@@ -1,10 +1,13 @@
-import { Controller, Delete, Get, Post, Put  } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Post, Put  } from "@nestjs/common";
+import { ProductServie } from "./product.service";
+
 
 @Controller('catalog')
 export class ProductController {
+    constructor(private productService: ProductServie){}
     @Post('product')
-    addProduct(): String {
-        return 'get Product'
+    addProduct(@Body() newProductData) {
+        return this.productService.createCatalogProduct(newProductData)
     } 
     
     @Put('product')

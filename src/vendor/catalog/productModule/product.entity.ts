@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('Catalog_Product')
 export class CatalogProductEntity {
@@ -217,5 +217,4 @@ export class CatalogProductEntity {
         type: "varchar"
     })
     type: String;
-
 }
